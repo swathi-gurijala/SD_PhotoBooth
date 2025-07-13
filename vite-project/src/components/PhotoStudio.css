@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.photoStudio {
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.5s ease;
+  position: relative;
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+}
+
+/* Background overlay for light/dark theme */
+.photoStudio::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: rgba(255, 255, 255, 0.1); /* light default */
+}
+
+.photoStudio.dark::before {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.photoStudio > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Light / Dark themes */
+.photoStudio.light {
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.photoStudio.dark {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 99;
+  background: rgba(255, 255, 255, 0.3);
+  color: black;
+}
+
+.photoStudio.dark .theme-toggle {
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+/* Webcam + countdown */
+.studio-container {
+  background: rgba(10, 10, 10, 0.8);
+  padding: 20px;
+  border-radius: 20px;
+  width: 600px;
+  margin: 100px auto;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.studio-webcam-container {
+  position: relative;
+}
+
+.studio-webcam {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.webcam-view {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Countdown */
+.countdown-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem;
+  font-weight: bold;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  z-index: 10;
+}
+
+/* Filter bar */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0;
+  overflow: visible;
+}
+
+.filter-btn {
+  background: #1a1a1a;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filter-btn.active {
+  background: gold;
+  color: black;
+}
+
+/* Capture button */
+.capture-btn {
+  background: gold;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 1.5rem;
+  box-shadow: 0 0 10px gold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Filters */
+.noir {
+  filter: grayscale(1) contrast(1.4);
+}
+
+._90s {
+  filter: sepia(0.25) contrast(1.2) brightness(1.1) hue-rotate(-5deg) saturate(0.7);
+}
+
+._2000s {
+  filter: contrast(1.3) saturate(1.6) brightness(1.05) hue-rotate(10deg);
+}
+
+.rainbow {
+  filter: hue-rotate(90deg);
+}
+
+.glitch {
+  filter: contrast(1.5) saturate(2);
+}
+
+.crosshatch {
+  filter: grayscale(0.5) blur(1px);
+}
+
+.fisheye {
+  filter: brightness(1.1);
+}
+
+/* 90s and 2000s additional overlays */
+.studio-webcam._90s::after,
+.studio-webcam._2000s::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.studio-webcam._90s::after {
+  background-image: url('https://www.transparenttextures.com/patterns/noise.png');
+  opacity: 0.2;
+  mix-blend-mode: overlay;
+}
+
+.studio-webcam._2000s::after {
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
+  mix-blend-mode: screen;
+}
+
+/* Result section */
+.studio-result {
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 700px;
+  width: 700px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50px;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.studio-result.slide-in-top {
+  animation: slideDown 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.photostrip-frame {
+  position: absolute;
+  left: 100px;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.strip-slide-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.strip-photo-wrapper {
+  margin: 8px 0;
+  transform: rotate(-1deg);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.strip-photo-img {
+  width: 220px;
+  border-radius: 12px;
+}
+
+.photostrip-caption {
+  font-family: 'Pacifico', cursive;
+  font-size: 18px;
+  margin-top: 12px;
+  color: #fff;
+}
+
+/* Result Buttons */
+.result-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  position: absolute;
+  left: 440px;
+}
+
+.reshoot,
+.download {
+  width: 150px;
+  height: 45px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #5c4033;
+  color: white;
+  border: none;
+  transition: 0.3s ease;
+}
+
+.reshoot:hover,
+.download:hover {
+  background-color: #7e5c4a;
+}
