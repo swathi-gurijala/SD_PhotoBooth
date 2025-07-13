@@ -78,7 +78,7 @@ Then open your browser to `http://localhost:5173/`.
 ```
 
 🖼️ Screenshot:
-![Structure](./assets/project-structure.png)
+![Structure](vite-project/public/images/project-structure.png)
 
 ## 🖼️ Screenshots
 
