@@ -63,19 +63,6 @@ Then open your browser to `http://localhost:5173/`.
 
 ## 🗂️ Project Structure
 
-```
-📁 dv-photobooth  
-├── 📁 assets  
-├── 📁 src  
-│   ├── 📄 PhotoBooth.jsx  
-│   ├── 📄 PhotoStudio.jsx  
-│   ├── 📄 PhotoBooth.css  
-│   └── 📄 PhotoStudio.css  
-├── 📄 index.html  
-├── 📄 package.json  
-└── 📄 vite.config.js
-```
-
 🖼️ Screenshot:
 ![Structure](vite-project/public/images/project-structure.png)
 
