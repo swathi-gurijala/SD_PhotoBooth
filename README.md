@@ -84,9 +84,6 @@ Then open your browser to `http://localhost:5173/`.
 ### Home (Before Coin Insert)
 ![Home](./assets/home.png)
 
-### Studio with Webcam & Filters
-![Studio](./assets/studio.png)
-
 ### Downloaded Strip Preview
 ![Strip](./assets/strip.png)
 
@@ -94,4 +91,4 @@ Then open your browser to `http://localhost:5173/`.
 
 - Swathi Gurijala  
 - [LinkedIn](https://www.linkedin.com/in/swathi-gurijala)  
-- 3rd-year AIML, Malla Reddy University
+- 4th-year AIML, Malla Reddy University
