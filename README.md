@@ -86,7 +86,7 @@ Then open your browser to `http://localhost:5173/`.
 ![Home](./assets/home.png)
 
 ### Downloaded Strip Preview
-![Strip](./assets/strip.png)
+![Strip](vite-project/public/images/SD_strip_2025-07-13 (2).jpg)
 
 ## 👩‍💻 Author
 
