@@ -3,7 +3,6 @@
 ## 🎯 Final Output - UI Preview
 Below is a screenshot of the app interface:
 
-![Photobooth curtain raise with coin Screenshot](./assets/project-ui.png)
 ![Photobooth UI Screenshot](./screenshots/UI1.png)
 
 DV PhotoBooth 🎞️ is a fun and interactive virtual photo booth built with React and Vite.  
@@ -83,7 +82,7 @@ Then open your browser to `http://localhost:5173/`.
 ## 🖼️ Screenshots
 
 ### Home (Before Coin Insert)
-![Home](./assets/home.png)
+![Home](vite-project/public/images/ui-preview.png)
 
 ### Downloaded Strip Preview
 ![Strip](vite-project/public/images/SD_strip_2025-07-13 (2).jpg)
