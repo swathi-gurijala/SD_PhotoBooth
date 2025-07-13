@@ -49,7 +49,7 @@ git clone https://github.com/your-username/dv-photobooth.git
 cd dv-photobooth
 ```
 
-2. Install dependencies:
+2. Install dependencies since the node modules is excluded in this repository:
 ```bash
 npm install
 ```
