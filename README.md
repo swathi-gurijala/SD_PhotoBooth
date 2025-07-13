@@ -1,6 +1,9 @@
 # DV PhotoBooth 🎞️
 
-![DV PhotoBooth Screenshot](./assets/project-structure.png)
+## 🎯 Final Output - UI Preview
+Below is a screenshot of the app interface:
+
+![UI Screenshot](./assets/project-ui.png)
 
 DV PhotoBooth 🎞️ is a fun and interactive virtual photo booth built with React and Vite.  
 Simulates a retro-style booth with coin insert, curtains, webcam feed, filters, and downloadable photo strips.
