@@ -45,8 +45,8 @@ Simulates a retro-style booth with coin insert, curtains, webcam feed, filters, 
 
 1. Clone the repo:
 ```bash
-git clone https://github.com/your-username/dv-photobooth.git
-cd dv-photobooth
+git clone https://github.com/swathi-gurijala/SD_PhotoBooth.git
+cd SD_PhotoBooth
 ```
 
 2. Install dependencies since the node modules is excluded in this repository:
